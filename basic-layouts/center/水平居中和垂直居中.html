@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平居中和垂直居中</title>
+    <style>
+        .txtCenter {
+            text-align: center;
+            border: 1px solid red;
+        }
+
+        .blkCenter {
+            width: 200px;
+            margin: 10px auto;
+            border: 1px solid red;
+        }
+
+        .vCenter {
+            height: 300px;
+            position: relative;
+            border: 1px solid green;
+        }
+
+        .vCenterBox {
+            height: 100px;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -100px;
+            border: 1px solid yellowgreen;
+        }
+
+        .vCenter1 {
+            height: 300px;
+            position: relative;
+            border: 1px solid green;
+        }
+
+        .vCenterBox1 {
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>水平居中 - 行内元素</h1>
+    <div class="txtCenter"><span>水平居中的行内元素</span></div>
+
+    <h1>水平居中 - 定宽块状元素</h1>
+    <div class="blkCenter">
+        <p>水平居中的定宽块状元素</p>
+        <p>满足定宽和块状两个条件的元素是可以通过设置“左右margin”值为“auto”来实现居中的。</p>
+    </div>
+
+    <h1>垂直居中</h1>
+    <div class="vCenter">
+        <div class="vCenterBox"></div>
+    </div>
+
+    <h1>垂直居中1</h1>
+    <div class="vCenter">
+        <div class="vCenterBox">定高元素的垂直居中</div>
+    </div>
+
+    <h1>垂直居中2</h1>
+    <div class="vCenter1">
+        <div class="vCenterBox1">不定高元素的垂直居中；不定高元素的垂直居中</div>
+    </div>
+</body>
+
+</html>
