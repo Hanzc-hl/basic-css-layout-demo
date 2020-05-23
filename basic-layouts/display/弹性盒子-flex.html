@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒子-flex属性</title>
+
+    <style>
+        /* display: flex */
+        .flex1 {
+            height: 250px;
+            background: skyblue;
+            display: flex;
+            /* justify-content: flex-start */
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            font-size: 1em;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: orange;
+            font-size: 2em;
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background: green;
+            font-size: 3em;
+        }
+
+        /* justify-content */
+        .justify-content1 {
+            height: 250px;
+            background: skyblue;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .justify-content2 {
+            height: 250px;
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+        }
+        .justify-content3 {
+            height: 250px;
+            background: skyblue;
+            display: flex;
+            justify-content: space-between;
+        }
+        .justify-content4 {
+            height: 250px;
+            background: skyblue;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* align-items */
+        .align-items1 {
+            height: 300px;
+            background: skyblue;
+            display: flex;
+            align-items: flex-start;
+        }
+        .align-items2 {
+            height: 300px;
+            background: skyblue;
+            display: flex;
+            align-items: flex-end;
+        }
+        .align-items3 {
+            height: 300px;
+            background: skyblue;
+            display: flex;
+            align-items: center;
+        }
+        .align-items4 {
+            height: 300px;
+            background: skyblue;
+            display: flex;
+            align-items: baseline;
+        }
+        .align-items5 {
+            height: 300px;
+            background: skyblue;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .flexbox1 {
+            width: 200px; /* 该属性将会失效 */
+            height: 200px;
+            background: red;
+            font-size: 1em;
+            flex: 1;
+        }
+        .flexbox2 {
+            width: 200px; /* 该属性将会失效 */
+            height: 200px;
+            background: orange;
+            font-size: 2em;
+            flex: 2;
+        }
+        .flexbox3 {
+            width: 200px; /* 该属性将会失效 */
+            height: 200px;
+            background: green;
+            font-size: 3em;
+            flex: 3;
+        }
+    </style>
+</head>
+<body>
+    <h2><code>display:flex</code></h2>
+    <div>
+        这是一个默认的弹性盒子。
+        带有默认的<code>justify-content: flex-start</code>;
+        <div class="flex1">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+    <div>
+        一些说明：
+        <ul>
+            <li>设置display: flex属性可以把块级元素在一排显示。</li>
+            <li>flex需要添加在父元素上，改变子元素的排列顺序。</li>
+            <li>默认为从左往右依次排列,且和父元素左边没有间隙。</li>
+        </ul>
+    </div>
+
+    <h2><code>justify-content</code>属性</h2>
+    <div>
+        这是一个弹性盒子。设置了<code>justify-content: flex-end</code>;
+        <div class="justify-content1">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+    <div>
+        这是一个弹性盒子。设置了<code>justify-content: center</code>;
+        <div class="justify-content2">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+
+    <hr />
+    
+    <div>
+        这是一个弹性盒子。设置了<code>justify-content: space-between</code>;
+        <div class="justify-content3">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+    <div>
+        这是一个弹性盒子。设置了<code>justify-content: space-around</code>;
+        <div class="justify-content4">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+
+    <h2><code>align-items</code>属性</h2>
+    <div>
+        这是一个弹性盒子。设置了<code>align-item:flex-start</code>;
+        <div class="align-items1">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+    <div>
+        
+        这是一个弹性盒子。设置了<code>align-item:flex-end</code>;
+        <div class="align-items2">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+    <div>
+        这是一个弹性盒子。设置了<code>align-item:center</code>;
+        <div class="align-items3">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+    </div>
+    <hr />
+    <div style='position:relative'>
+        这是一个弹性盒子。设置了<code>align-item:baseline</code>;
+        <div class="align-items4">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+        </div>
+        <div style="position: absolute; top: 51px; border-top: black;">
+            ______________________________________________________________________________________
+            这条线就是baseline。
+        </div>
+    </div>
+    <hr />
+    <div>
+        这是一个弹性盒子。设置了<code>align-item:stretch</code>;
+        <div class="align-items5">
+            <div class="box1" style="height: auto;">box1</div>
+            <div class="box2" style="height: auto;">box2</div>
+            <div class="box3" style="height: auto;">box3</div>
+        </div>
+    </div>
+    <hr />
+
+    <h2><code>flex</code>属性</h2>
+    <ul>
+        <li>给子元素设置flex属性,可以设置子元素相对于父元素的占比。</li>
+        <li>flex属性的值只能是正整数,表示占比多少。</li>
+        <li>给子元素设置了flex之后,其宽度属性会失效。</li>
+    </ul>
+    <div>
+        这是一个弹性盒子。子元素设置了<code>flex</code>;
+        <div class="flex1">
+            <div class="flexbox1">box1 - flex: 1</div>
+            <div class="flexbox2">box2 - flex: 2</div>
+            <div class="flexbox3">box3 - flex: 3</div>
+        </div>
+    </div>
+    <hr />
+</body>
+</html>

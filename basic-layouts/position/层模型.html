@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>层模型</title>
+    <style type='text/css'>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        #div1 {
+            border: 1px solid green;
+            height: 300px;
+            position: relative;
+        }
+
+        #absolute {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: absolute;
+            left: 20px;
+            top: 40px;
+        }
+
+        #relative {
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            position: relative;
+            left: 100px;
+            top: 300px;
+        }
+
+        #fixed {
+            width: 200px;
+            height: 200px;
+            border: 1px solid yellow;
+            position: fixed;
+            left: 500px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>层模型需要用到css的position属性</p>
+    </div>
+    <div>
+        <p>position属性有三种：</p>
+        <ul>
+            <li>绝对定位：position: absolute</li>
+            <li>相对定位：position: relative</li>
+            <li>固定定位：podition: fixed</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>absolute会将元素从文档流中拖出来，
+            然后使用left、right、top、bottom属性相对于其最接近的<span>一个具有定位属性</span>的父包含块进行绝对定位。
+            如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。
+        </p>
+    </div>
+    <div id='div1'>
+        这个div需要有position属性，否则会继续寻找上级元素，只到body元素为止。
+        <div id='absolute'>
+            <code>position: absolute</code>
+            这是一个绝对定位的例子，绿色边框表示它的父元素， 红色边框表示它本身。
+            它相对于<strong>父元素</strong>左上角偏移（20px，40px）（left: 20px; top:40px）.
+        </div>
+    </div>
+
+    <div id='relative'>
+        <code>position: relative</code>
+        这是一个相对定位的例子 蓝色边框表示它本身。
+        相对定位指相对于不主动设置position时（即默认值：position: static），
+        它相对于<strong>它自身</strong>的偏移。
+        左上角偏移（100px，300px）（left: 100px; top:300px）.
+    </div>
+
+    <div id='fixed'>
+        <code>position: fixed</code>
+        这是一个固定定位的例子 黄色色边框表示它本身。
+        固定定位指它相对于<strong>浏览器窗口</strong>左上角偏移
+        左上角偏移（100px，200px）（left: 100px; top:200px）.
+        浏览器滚动条滚动时，它在浏览器中的相对位置不会发生改变。
+    </div>
+</body>
+
+</html>
